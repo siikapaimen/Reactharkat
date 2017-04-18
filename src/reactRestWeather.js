@@ -16,10 +16,11 @@ class App extends Component {
   handleChange(event) {
     this.setState({city: event.target.value});
   }
+    
 
 fetchWeather() {
   console.log('fetching...');
-  fetch('http://api.openweathermap.org/data/2.5/weather?q=Helsinki&APPID=YOUR_APPID&units=metric')
+  fetch('http://api.openweathermap.org/data/2.5/weather?q='+ this.state.city +'&APPID=112cf26bb59d1793645a1503344ec189&units=metric')
     .then(result => result.json())
     .then(result => this.setState({
           city: 'type city...', 
